@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.daily_report_*.md
+.DS_Store

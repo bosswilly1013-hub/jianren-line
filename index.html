@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1F4D3A">
+  <title>健人餐廚巨蛋店｜加 LINE 領首購優惠</title>
+  <meta name="description" content="巨蛋附近的健康餐，蛋白質與熱量標示清楚。加 LINE 好友領首購優惠。">
+  <meta property="og:title" content="健人餐廚巨蛋店｜加 LINE 領首購優惠">
+  <meta property="og:description" content="巨蛋附近的健康餐，蛋白質與熱量標示清楚。加 LINE 好友領首購優惠。">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231F4D3A'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='white'%3E健%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #F4F1EA;
+      --ink: #163126;
+      --muted: #4C5E54;
+      --card: #FFFFFF;
+      --forest: #1F4D3A;
+      --leaf: #2E7D57;
+      --line: #06C755;
+      --line-ink: #053516;
+      --offer: #FFF7E8;
+      --offer-edge: #E8C97A;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--bg); color: var(--ink); }
+    body {
+      font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+      line-height: 1.55;
+      min-height: 100dvh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      padding: 20px 20px 40px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--forest);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .brand-name { font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+    .brand-sub { font-size: 12px; color: var(--muted); }
+    h1 {
+      font-size: clamp(26px, 7vw, 32px);
+      line-height: 1.28;
+      letter-spacing: .01em;
+      margin-bottom: 12px;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 22px;
+    }
+    .pills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .pill {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 14px 12px;
+      box-shadow: 0 1px 0 rgba(22, 49, 38, .04);
+    }
+    .pill strong { display: block; font-size: 14px; }
+    .pill span { font-size: 12px; color: var(--muted); }
+    .offer {
+      background: var(--offer);
+      border: 1px solid var(--offer-edge);
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+      margin-bottom: 20px;
+    }
+    .offer .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: #8A6A1A;
+      margin-bottom: 6px;
+    }
+    .offer p { font-size: 15px; font-weight: 600; }
+    .offer .note { font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 6px; }
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: var(--line);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: .02em;
+      border: 0;
+      border-radius: 16px;
+      padding: 18px 16px;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(6, 199, 85, .28);
+    }
+    .cta:active { transform: translateY(1px); }
+    .cta[disabled], .cta.is-sending {
+      opacity: .8;
+      pointer-events: none;
+    }
+    .cta svg { width: 26px; height: 26px; flex-shrink: 0; }
+    .hint {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+      margin-bottom: 28px;
+    }
+    .points { list-style: none; display: grid; gap: 10px; }
+    .points li {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+    .points b { color: var(--leaf); }
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1182847494071452');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1182847494071452&ev=PageView&noscript=1"
+    alt=""></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="mark" aria-hidden="true">健</div>
+      <div>
+        <div class="brand-name">健人餐廚</div>
+        <div class="brand-sub">健康餐（巨蛋店）</div>
+      </div>
+    </header>
+
+    <h1>巨蛋附近，想吃蛋白質清楚、熱量標好的一餐？</h1>
+    <p class="lead">運動完或下班後不必猜菜單數字。先加 LINE，領首購優惠再決定要吃什麼。</p>
+
+    <div class="pills">
+      <div class="pill">
+        <strong>蛋白質標示</strong>
+        <span>每份餐點標出蛋白質含量</span>
+      </div>
+      <div class="pill">
+        <strong>熱量標示</strong>
+        <span>熱量寫清楚，方便控制飲食</span>
+      </div>
+    </div>
+
+    <div class="offer">
+      <div class="label">首購優惠</div>
+      <p>[優惠內容待填]</p>
+      <p class="note">實際優惠以 LINE 官方帳號回覆為準，本頁不另標價格。</p>
+    </div>
+
+    <a class="cta" id="line-cta" href="https://line.me/R/ti/p/@071bizxl">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 2C6.48 2 2 6.04 2 11.02c0 4.47 3.97 8.21 9.33 8.9.36.07.85.23 1 .52.12.26.08.67.04 192.168.2.5-.17 1.08-.26 1.23-.15.24-.45.19-.45.19s-2.5-.73-3.4-.99C4.9 20.07 2 16.34 2 11.02 2 5.48 6.48 2 12 2zm-3.2 8.7H7.3c-.22 0-.4.18-.4.4v3.5c0 .22.18.4.4.4h.86c.22 0 .4-.18.4-.4v-2.18h.84c.22 0 .4-.18.4-.4v-.52c0-.22-.18-.4-.4-.4zm2.08 0c-.22 0-.4.18-.4.4v3.5c0 .22.18.4.4.4h.86c.22 0 .4-.18.4-.4v-3.5c0-.22-.18-.4-.4-.4zm5.66 0h-2.12c-.22 0-.4.18-.4.4v3.5c0 .22.18.4.4.4h2.12c.22 0 .4-.18.4-.4v-.52c0-.22-.18-.4-.4-.4h-1.26v-.55h1.26c.22 0 .4-.18.4-.4v-.52c0-.22-.18-.4-.4-.4h-1.26v-.51h1.26c.22 0 .4-.18.4-.4v-.52c0-.22-.18-.4-.4-.4zm-2.7 0h-.86c-.22 0-.4.18-.4.4v3.5c0 .22.18.4.4.4h.86c.22 0 .4-.18.4-.4v-3.5c0-.22-.18-.4-.4-.4z"/>
+      </svg>
+      加 LINE 好友領首購優惠
+    </a>
+    <p class="hint">官方帳號：健人餐廚-健康餐（巨蛋店）　ID @071bizxl</p>
+
+    <ul class="points">
+      <li><b>就在巨蛋附近</b>　上班、運動完都能就近吃健康餐。</li>
+      <li><b>數字寫在餐上</b>　蛋白質與熱量清楚標示，不用再猜。</li>
+      <li><b>先加 LINE 再點餐</b>　[優惠內容待填]；門市資訊請以官方帳號為準。</li>
+    </ul>
+
+    <footer>
+      本頁會使用 Meta 像素記錄頁面瀏覽與「加 LINE」按鈕點擊，用來衡量廣告成效。<br>
+      健人餐廚｜健康餐（巨蛋店）。優惠、營業與取餐方式以 LINE 官方帳號回覆為準。
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var LINE_URL = 'https://line.me/R/ti/p/@071bizxl';
+      var STORAGE_KEY = 'jianren_utm';
+      var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
+
+      function readStored() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; }
+        catch (e) { return {}; }
+      }
+
+      function save(utm) {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(utm)); }
+        catch (e) {}
+      }
+
+      function collectUtm() {
+        var params = new URLSearchParams(window.location.search);
+        var stored = readStored();
+        var current = {};
+        var hasNew = false;
+        KEYS.forEach(function (k) {
+          var v = params.get(k);
+          if (v) { current[k] = v; hasNew = true; }
+          else if (stored[k]) { current[k] = stored[k]; }
+        });
+        if (hasNew) save(current);
+        return current;
+      }
+
+      function withUtm(base, utm) {
+        var url = new URL(base);
+        Object.keys(utm).forEach(function (k) {
+          if (utm[k]) url.searchParams.set(k, utm[k]);
+        });
+        return url.toString();
+      }
+
+      var utm = collectUtm();
+      window.__jianrenUtm = utm;
+
+      if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent', {
+          content_name: '健人餐廚巨蛋店加LINE',
+          content_category: 'line_add_friend',
+          utm_campaign: utm.utm_campaign || '',
+          utm_content: utm.utm_content || ''
+        });
+      }
+
+      var cta = document.getElementById('line-cta');
+      if (!cta) return;
+      cta.setAttribute('href', withUtm(LINE_URL, utm));
+
+      var sent = false;
+      function goLine(ev) {
+        ev.preventDefault();
+        if (sent) return;
+        sent = true;
+        cta.classList.add('is-sending');
+
+        if (typeof fbq === 'function') {
+          var payload = {
+            content_name: '加LINE好友',
+            utm_campaign: utm.utm_campaign || '',
+            utm_content: utm.utm_content || ''
+          };
+          fbq('track', 'Lead', payload);
+          fbq('trackCustom', 'ClickLINE', payload);
+        }
+
+        var dest = withUtm(LINE_URL, utm);
+        setTimeout(function () { window.location.href = dest; }, 300);
+      }
+
+      cta.addEventListener('click', goLine);
+    })();
+  </script>
+</body>
+</html>
